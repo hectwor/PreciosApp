@@ -1,4 +1,4 @@
-package hect.preciosapp.Models;
+package hect.preciosapp.models;
 
 /**
  * Created by hect on 17/02/18.

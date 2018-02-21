@@ -1,7 +1,6 @@
-package hect.preciosapp;
+package hect.preciosapp.listprices;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 
-import hect.preciosapp.Models.Product;
+import hect.preciosapp.models.Product;
+import hect.preciosapp.R;
 
 /**
  * Created by hect on 17/02/18.

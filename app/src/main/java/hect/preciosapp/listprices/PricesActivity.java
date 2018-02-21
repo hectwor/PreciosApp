@@ -1,4 +1,4 @@
-package hect.preciosapp;
+package hect.preciosapp.listprices;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,7 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import hect.preciosapp.Models.Product;
+
+import hect.preciosapp.models.Product;
+import hect.preciosapp.R;
 
 
 public class PricesActivity extends AppCompatActivity{
@@ -31,8 +33,6 @@ public class PricesActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prices);
-
-
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -82,8 +82,6 @@ public class PricesActivity extends AppCompatActivity{
             products = new ArrayList<>();
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-
 
             listproducts = new ListProductAdapter(products, rootView.getContext());
             recyclerView.setAdapter(listproducts);

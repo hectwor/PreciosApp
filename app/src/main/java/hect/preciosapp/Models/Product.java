@@ -1,6 +1,4 @@
-package hect.preciosapp.Models;
-
-import android.text.Editable;
+package hect.preciosapp.models;
 
 /**
  * Created by hect on 17/02/18.

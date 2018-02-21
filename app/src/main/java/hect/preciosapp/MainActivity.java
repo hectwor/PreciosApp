@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import hect.preciosapp.listprices.PricesActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Button btnSearch, btnAdd, btnModify;
 
