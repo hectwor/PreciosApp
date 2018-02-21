@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "282927448485",
+    "firebase_url": "https://preciosapp-30018.firebaseio.com",
+    "project_id": "preciosapp-30018",
+    "storage_bucket": "preciosapp-30018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282927448485:android:a1cb0457f1642163",
+        "android_client_info": {
+          "package_name": "hect.preciosapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282927448485-1fqk0n4k5ca37jj2d4m9vgba36b9919k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hect.preciosapp",
+            "certificate_hash": "63cf80334b3afaaffa314cc40c55ac069745e8a0"
+          }
+        },
+        {
+          "client_id": "282927448485-ih94b47n4rblpun8jmoncq21l450fhck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbWX4MwquPcMpQG2XlGQF4XTOPN9zDlpE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282927448485-ih94b47n4rblpun8jmoncq21l450fhck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

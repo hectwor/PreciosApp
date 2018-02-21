@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PreciosApp</string>
+    <string name="ButtonMain1">Ver Precios</string>
+    <string name="ButtonMain2">Añadir Producto</string>
+    <string name="ButtonMain3">Modificar Precio</string>
+    <string name="title_activity_prices">Precios de Productos</string>
+    <string name="title_activity_add">Añadir Producto</string>
+    <string name="title_activity_modify">Modificar Producto</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_category_product">Categoría</string>
+    <string name="category_1">Bebidas</string>
+    <string name="category_2">Snacks</string>
+    <string name="category_3">Embutidos</string>
+    <string name="category_4">Galletas y Dulces</string>
+    <string name="category_5">Útiles Escolares</string>
+    <string name="category_6">Uso personal</string>
+    <string name="category_7">Consumo personal</string>
+
+    <string name="product_name">Nombre del Producto</string>
+    <string name="product_category">Categoría del Producto</string>
+    <string name="product_price">Precio</string>
+
+    <string name="Add">Añadir</string>
+
+    <string name="moneda">s/.</string>
+</resources>
