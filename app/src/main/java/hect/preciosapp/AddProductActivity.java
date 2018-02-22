@@ -1,15 +1,22 @@
 package hect.preciosapp;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,6 +42,9 @@ import java.util.List;
 
 import hect.preciosapp.models.Product;
 
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class AddProductActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText name_product;
@@ -41,6 +52,7 @@ public class AddProductActivity extends AppCompatActivity implements AdapterView
     private EditText price_product;
     private Button btnAdd;
     private Spinner spn;
+
     private ProgressDialog mProgressDialog;
 
     private StorageReference mStorage;
@@ -49,11 +61,12 @@ public class AddProductActivity extends AppCompatActivity implements AdapterView
     private static String MEDIA_DIRECTORY = APP_DIRECTORY + "Images";
     private String mPath;
 
-    private final int MY_PERMISSIONS = 100;
+
     private final int PHOTO_CODE = 200;
     private final int SELECT_PICTURE = 300;
     private static final int GALLERY_INTENT = 1;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,13 +92,33 @@ public class AddProductActivity extends AppCompatActivity implements AdapterView
         mStorage = FirebaseStorage.getInstance().getReference();
         btnAdd = findViewById(R.id.btnAddProduct);
 
+        if (mayRequestStoragePermission()){
+            btnAdd.setEnabled(true);
+        }else
+            btnAdd.setEnabled(false);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                OpcionImageSelect();
+                if ("".equals(name_product.getText().toString())){
+                    name_product.setError("Escribir nombre de producto");
+                    name_product.requestFocus();
+                }else if ("".equals(price_product.getText().toString())){
+                    price_product.setError("Escribir precio de producto");
+                    price_product.requestFocus();
+                }else
+                    OpcionImageSelect();
             }
         });
+    }
+
+    private boolean mayRequestStoragePermission(){
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+            return true;
+        if ((checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) &&
+                (checkSelfPermission(CAMERA) == PackageManager.PERMISSION_GRANTED))
+            return true;
+        return false;
     }
 
     public void OpcionImageSelect(){
@@ -193,4 +226,5 @@ public class AddProductActivity extends AppCompatActivity implements AdapterView
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }
